@@ -351,6 +351,11 @@
 "Assets/Instance/Scripts/MonsterManager.cs"
 "Assets/Translate/FerociousIndustries/PBRDinosaurs/PBRStegasaurus/Scripts/StegaSoundEffects.cs"
 "Assets/Translate/Scripts/Cat.cs"
+"Assets/UGUI/Scripts/Cube.cs"
+"Assets/UGUI/Scripts/EventManager.cs"
+"Assets/UGUI/Scripts/RotateX.cs"
+"Assets/UGUI/Scripts/RotateY.cs"
+"Assets/UGUI/Scripts/RotateZ.cs"
 "Assets/UseInterface/Scripts/Car.cs"
 -langversion:9.0
 
