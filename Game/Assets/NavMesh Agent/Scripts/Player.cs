@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Vector3 direction;
+    [SerializeField] float speed = 1.0f;
+    [SerializeField] Rigidbody rigidBody;
+
     void Start()
     {
         
@@ -13,7 +16,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.z = Input.GetAxisRaw("Vertical");
+        direction.Normalize();
+    }
+    private void FixedUpdate()
+    {
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

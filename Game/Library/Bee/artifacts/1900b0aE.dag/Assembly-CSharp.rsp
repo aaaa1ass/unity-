@@ -364,6 +364,8 @@
 "Assets/NavMesh Agent/Scripts/Player.cs"
 "Assets/Physics/Scripts/BilliardBall.cs"
 "Assets/Physics/Scripts/PhysicsManager.cs"
+"Assets/Rotation/Scripts/Observe.cs"
+"Assets/Rotation/Scripts/Revolution.cs"
 "Assets/Translate/FerociousIndustries/PBRDinosaurs/PBRStegasaurus/Scripts/StegaSoundEffects.cs"
 "Assets/Translate/Scripts/Cat.cs"
 "Assets/UGUI/Scripts/Cube.cs"
