@@ -11,7 +11,6 @@ public class Create1 : MonoBehaviour
     private bool active = true;
     private float currentTime = 5f;
     public float loc = 0;
-    public float dir = 0;
     public void CreateGeneric()
     {
         active = false;
@@ -19,7 +18,7 @@ public class Create1 : MonoBehaviour
             prefab,// 생성할 오브젝트
             new Vector3(loc, 0,0),//위치
             prefab.transform.rotation
-            ).AddComponent<P>();
+            );
     }
     // Start is called before the first frame update
     void Start()
