@@ -355,6 +355,7 @@
 "Assets/Battle Game/Scripts/Create1.cs"
 "Assets/Battle Game/Scripts/EnemyUnit.cs"
 "Assets/Battle Game/Scripts/HP.cs"
+"Assets/Battle Game/Scripts/HPBar.cs"
 "Assets/Battle Game/Scripts/MyUnit.cs"
 "Assets/Battle Game/Scripts/P.cs"
 "Assets/File Management/Scripts/BronzeUnit.cs"

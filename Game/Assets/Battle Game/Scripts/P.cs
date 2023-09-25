@@ -6,17 +6,18 @@ public class P : MonoBehaviour
 {
     private Vector3 direction;
     [SerializeField] float speed = 1.0f;
-    [SerializeField] float dir = 1.0f;
+    [SerializeField] float dir = 90.0f;
     bool attak = false;
     bool dead = false;
-    [SerializeField]int hp = 5;
     [SerializeField]P enemy;
+    [SerializeField] HPBar hpBar;
+    private float maxHP = 5f;
+    [SerializeField]float hp = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
         direction.z = dir;
-        gameObject.transform.Rotate(0, 90 * dir, 0);
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class P : MonoBehaviour
             gameObject.transform.Translate(0,0,-100);
             dead = true;
         }
+        if(enemy == null) { speed = 1.0f * dir; }
     }
 
     public void Attack(int damage)
@@ -47,6 +49,7 @@ public class P : MonoBehaviour
     public void Damaged(int damage)
     {
         hp -= damage;
+        hpBar.CurrentHP(hp, maxHP);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,12 +61,6 @@ public class P : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         attak = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        speed = 1.0f;
-        enemy = null;
     }
 
 }
