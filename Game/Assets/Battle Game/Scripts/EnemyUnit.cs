@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class EnemyUnit : BattleUnit
 {
+    protected HPBar hpBar;
     // Start is called before the first frame update
     void Start()
     {
-
         attack = 10;
         health = 100;
         speed = -1.5f;
-        animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("Battle 1");
+        maxHP = health;
 
+        animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("Battle 1");
+        hpBar = GetComponent<HPBar>();
     }
 
     public void Damage()
@@ -27,5 +29,23 @@ public class EnemyUnit : BattleUnit
             target = other;
             state = State.ATTACK;
         }
+    }
+
+    public override void Hit(float damage)
+    {
+        health -= damage;
+        hpBar.CurrentHP(health, maxHP);
+        if (health <= 0)
+        {
+            state = State.DIE;
+            target.GetComponent<MyUnit>().state = State.RUN;
+        }
+    }
+
+    protected override void Move()
+    {
+        speed = -1.5f;
+        animator.SetBool("Attack", false);
+        transform.Translate(-1 * transform.right * speed * Time.deltaTime);
     }
 }

@@ -8,8 +8,11 @@ ATTACK,
 DIE
 }
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(HPBar))]
+
 public class BattleUnit : MonoBehaviour
 {
+    protected float maxHP;
     protected float health;
     protected float attack;
     protected float speed;
@@ -17,7 +20,7 @@ public class BattleUnit : MonoBehaviour
     protected Animator animator;
     protected Collider target;
 
-    protected State state;
+    public State state;
 
     // Start is called before the first frame update
     private void Awake()
@@ -45,14 +48,12 @@ public class BattleUnit : MonoBehaviour
 
     protected virtual void Move()
     {
-        animator.SetBool("Attack", false);
+       animator.SetBool("Attack", false);
        transform.Translate(-1 * transform.right * speed * Time.deltaTime);
-
     }
 
     protected virtual void Attack()
     {
-        Debug.Log(100);
         speed = 0f;
         animator.SetBool("Attack", true);    
     }
@@ -63,7 +64,7 @@ public class BattleUnit : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Hit(float damage)
+    public virtual void Hit(float damage)
     {
         health -= damage;
         if(health<=0)

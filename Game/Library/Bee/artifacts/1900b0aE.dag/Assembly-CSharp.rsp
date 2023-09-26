@@ -358,6 +358,7 @@
 "Assets/Battle Game/Scripts/HPBar.cs"
 "Assets/Battle Game/Scripts/MyUnit.cs"
 "Assets/Battle Game/Scripts/P.cs"
+"Assets/Battle Game/Scripts/SceneManagement.cs"
 "Assets/File Management/Scripts/BronzeUnit.cs"
 "Assets/File Management/Scripts/CSVReader.cs"
 "Assets/File Management/Scripts/MovementScene.cs"
