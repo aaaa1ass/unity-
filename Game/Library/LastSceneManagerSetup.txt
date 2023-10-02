@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Animation Blend Tree/Scenes/AnimationBlendTreeScene.unity
+- path: Assets/Object Pool/Scenes/Object Pool Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
